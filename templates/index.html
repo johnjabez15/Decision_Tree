@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Purchase Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Purchase Prediction</h1>
+        <form action="/predict" method="post">
+            <label>Age:</label>
+            <input type="number" name="age" min="18" max="70" required>
+
+            <label>Gender:</label>
+            <select name="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label>Annual Income (₹):</label>
+            <input type="number" name="annual_income" step="0.01" required>
+
+            <label>Spending Score (1-100):</label>
+            <input type="number" name="spending_score" min="1" max="100" required>
+
+            <label>Prior Purchases:</label>
+            <input type="number" name="prior_purchases" min="0" max="50" required>
+
+            <label>Product Category:</label>
+            <select name="product_category" required>
+                <option value="">Select</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Food">Food</option>
+                <option value="Sports">Sports</option>
+                <option value="Beauty">Beauty</option>
+            </select>
+
+            <label>Loyalty Member:</label>
+            <select name="loyalty_member" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
